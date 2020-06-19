@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stopwatch</title>
+    <link rel="icon" href="sw_ico.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stopwatch">
+        <h1 id="swmin">00</h1>
+        <h1 class="abs"> : </h1>
+        <h1 id="swsec">00</h1>
+        <h1 class=abs> . </h1>
+        <h1 id="swms">00</h1>
+        <div class="buttons">
+            <button id="tg" onclick="toggle()">Start</button>
+            <button id="clear" onclick="clear()">Clear</button>
+        </div>
+        
+    </div>
+</body>
+</html>
+<style>
+    html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}*/
+    .stopwatch{
+        
+        position: fixed;
+        display: inline-flex;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    h1{
+       font-family: monospace,sans-serif;
+       font-size: 150px;
+       display: inline-block;
+       padding: 0px 20px;
+       letter-spacing: 10px;
+       
+    }
+    .abs{
+       
+    }
+    button{
+        font-size: 24px;
+        font-family: monospace;
+        padding: 10px 25px;
+        margin: 0px 20px;
+        border: 1px solid black;
+        color: black;
+        width: 130px;
+    }
+    .buttons{
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -60%);
+        position: fixed;
+    }
+    button:hover{
+        transition: color 0.5s;
+        border: 1px solid darkslategray;
+        color: darkslategray;
+    }
+</style>
+<script>
+    let sec = 0; 
+    let min = 0;
+    let ms = 0;
+
+    let running = false;
+    let timer;
+
+    function update(){
+        ms++;
+        
+        if(ms == 100){
+            sec++;
+            ms = 0;
+        }
+        if(sec == 60){
+            min++;
+            sec = 0;
+        }
+        if(min == 60){
+            min == 0;
+        }
+//00 : 00 . 00
+        document.getElementById("swmin").innerHTML = addZero(min);
+        document.getElementById("swsec").innerHTML = addZero(sec);
+        document.getElementById("swms").innerHTML = addZero(ms);
+    }
+    function addZero(number){
+        if(number < 10){
+            return "0"+number;
+            
+        }
+        else{
+            return number;
+        }
+    }
+    function toggle(){
+        
+        if(!running){
+            running = true;
+            timer = setInterval(update,10);
+            document.getElementById('tg').innerHTML = "Stop ";
+        }
+        else{
+            running = false;
+            document.getElementById('tg').innerHTML = "Start";
+            clearInterval(timer);
+        }
+    }
+    document.getElementById("clear").addEventListener("click",cleared)
+    function cleared(){
+        sec = min = ms = 0; 
+        document.getElementById("swmin").innerHTML = addZero(min);
+        document.getElementById("swsec").innerHTML = addZero(sec);
+        document.getElementById("swms").innerHTML = addZero(ms);
+    }
+</script>
