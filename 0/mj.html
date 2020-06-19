@@ -13,6 +13,9 @@
 </body>
 </html>
 <script>
+    document.oncontextmenu = function(){
+        return false;
+    }
     var btn = document.getElementById('btn');
     var inp = document.getElementById('inp');
     var paused = true;
