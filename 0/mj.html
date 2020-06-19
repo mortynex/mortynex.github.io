@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script src="https://kit.fontawesome.com/9ff3b5431c.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="res/icon.png">
 </head>
 <body onload="focus()">
     <input onload="focus()" id="inp" type="text">
@@ -11,15 +11,20 @@
         <metadata>Made with Pixels to Svg https://codepen.io/shshaw/pen/XbxvNj</metadata>
         <path stroke="#000000" d="M1 0h4M0 1h2M4 1h2" />
         </svg>
-    
 </body>
 </html>
 <script>
     var btn = document.getElementById('btn');
     var inp = document.getElementById('inp');
     var paused = true;
-    var music = new Audio('song.mp3');
-    inp.addEventListener('keydown',inputChange)
+    var music = new Audio('res/song.mp3');
+    music.loop = true;
+    inp.addEventListener('keyup',inputChange) 
+    document.addEventListener('keydown',event => {
+        if(event.code == "Space"){
+            playPause();
+        }
+    });
     function playPause(){
         inp.focus()
         if(paused){
@@ -31,13 +36,14 @@
             paused = true;
         }
     }
+    
     function inputChange(){
-        if(inp.value.includes("reset")){
+        if(inp.value.includes("reset")||inp.value.includes("restart")){
             music.pause();
             inp.value = "";
             music.currentTime = 0;
         }
-        if(inp.value.includes("pause")){
+        if(inp.value.includes("pause")||inp.value.includes("stop")){
             inp.value = "";
             music.pause();
         }
@@ -55,7 +61,8 @@
 </script>
 <style>
     #inp{
-       display: none;
+       opacity: 0%;
+       cursor: default;
     }
     #btn{
         position: fixed;
