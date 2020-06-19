@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/9ff3b5431c.js" crossorigin="anonymous"></script>
+</head>
+<body onload="focus()">
+    <input onload="focus()" id="inp" type="text">
+    <svg width="600px" height="200px" id="btn" onclick="playPause()" xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 6 2" shape-rendering="crispEdges">
+        <metadata>Made with Pixels to Svg https://codepen.io/shshaw/pen/XbxvNj</metadata>
+        <path stroke="#000000" d="M1 0h4M0 1h2M4 1h2" />
+        </svg>
+    
+</body>
+</html>
+<script>
+    var btn = document.getElementById('btn');
+    var inp = document.getElementById('inp');
+    var paused = true;
+    var music = new Audio('https://mortynex.github.io/d063/song.mp3');
+    inp.addEventListener('keydown',inputChange)
+    function playPause(){
+        inp.focus()
+        if(paused){
+            music.play();
+            paused = false;
+        } 
+        else {
+            music.pause();
+            paused = true;
+        }
+    }
+    function inputChange(){
+        if(inp.value.includes("reset")){
+            music.pause();
+            inp.value = "";
+            music.currentTime = 0;
+        }
+        if(inp.value.includes("pause")){
+            inp.value = "";
+            music.pause();
+        }
+        if(inp.value.includes("play")){
+            inp.value = "";
+            music.play();
+        }
+    }
+    function focus(){
+        inp.focus();
+    }
+    inp.addEventListener("load", focus);
+    document.addEventListener("click", focus);
+
+</script>
+<style>
+    #inp{
+       display: none;
+    }
+    #btn{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
