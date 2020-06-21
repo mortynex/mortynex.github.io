@@ -69,7 +69,9 @@ body {
 </style>
 <script>
     window.onload = function(){
-        localStorage.blackmode = "true";
+	if(localStorage.blackmode == nul){
+	localStorage.blackmode = "false";
+	}
         let chb = document.getElementsByClassName("checkbox")[0];
         if(localStorage.blackmode == "true"){
             document.body.classList.add("inverted");
@@ -80,7 +82,7 @@ body {
             if(localStorage.blackmode == "true"){
                 localStorage.blackmode = "false";
             }
-            else{
+            else if(localStorage.blackmode == "false"){
                 localStorage.blackmode = "true";
             }
         });
