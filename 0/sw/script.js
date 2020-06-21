@@ -25,7 +25,7 @@ function update() {
 	document.getElementById('swsec').innerHTML = addZero(sec);
 	document.getElementById('swms').innerHTML = addZero(ms);
 }
-document.addEventListener('keydown',event => {
+document.addEventListener('keyup',event => {
     if(event.code == "Space"){
         toggle();
     }
