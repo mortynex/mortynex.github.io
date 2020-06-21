@@ -1,0 +1,57 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.stopwatch {
+	position: fixed;
+	display: inline-flex;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -65%);
+}
+h1 {
+    font-family: monospace,sans-serif;
+	font-size: 150px;
+	display: inline-block;
+	padding: 0px 20px;
+    letter-spacing: 10px;
+}
+button {
+	font-size: 24px;
+	font-family: monospace;
+	padding: 10px 25px;
+	margin: 0px 20px;
+	border: 1px solid black;
+	color: black;
+    width: 130px;
+}
+.buttons{
+    transform: translate(-50%,-60%);
+    top: 90%;
+    left: 50%;
+    position: fixed;
+}
+button:focus, input:focus{
+    outline: none;
+}
+button:hover {
+	transition: color 0.2s;
+    border: 1.5px solid black;
+    padding: 9px 24px;
+    
+}
+/*@font-face {
+	font-family: 'Monaco';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Monaco'), url('Monaco.woff') format('woff');
+}

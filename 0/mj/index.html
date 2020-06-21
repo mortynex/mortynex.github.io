@@ -13,6 +13,11 @@
 </body>
 </html>
 <script>
+    window.onload = function(){
+        if(localStorage.blackmode == "true"){
+            document.body.classList.add("inverted");
+        }
+    }
     document.oncontextmenu = function(){
         return false;
     }
@@ -62,6 +67,10 @@
 
 </script>
 <style>
+    .inverted{
+        filter: invert(100%);
+        background-color: black;
+    }
     body{
         -webkit-touch-callout: none; 
         -webkit-user-select: none; 

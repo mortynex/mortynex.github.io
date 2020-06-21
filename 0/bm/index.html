@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Switch</title>
+    <link rel="icon" href="icon.png">
+</head>
+<body>
+    <input type="checkbox" class="checkbox"></div>
+</body>
+</html>
+<style>
+    html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: white;
+    }
+    .inverted{
+        transition: background-color 0.5s ease;
+        filter: invert(100%);
+        background-color: black;
+    }
+    .you:hover > .checkbox{
+        background-color: blue;
+    }
+    .checkbox{
+        position: fixed;
+        transform: translate(-50%,-50%);
+        
+        -webkit-appearance: none;
+        width: 400px;
+        height: 200px;
+        background-color: black;
+        border-radius: 200px;
+        cursor: pointer;
+        outline: none;
+    }
+    
+    .checkbox::before{
+        content: "";
+        position: absolute;
+        width: 160px;
+        height: 160px;
+        border-radius: 200px;
+        background-color: white;
+        top: 20px;
+        left: 20px;
+        
+        
+    }
+    .checkbox:checked::before{
+        left: 220px;
+        
+    }
+</style>
+<script>
+    window.onload = function(){
+        localStorage.blackmode = "true";
+        let chb = document.getElementsByClassName("checkbox")[0];
+        if(localStorage.blackmode == "true"){
+            document.body.classList.add("inverted");
+            chb.checked = true;
+        }
+        chb.addEventListener("click",()=>{
+            document.body.classList.toggle("inverted");
+            if(localStorage.blackmode == "true"){
+                localStorage.blackmode = "false";
+            }
+            else{
+                localStorage.blackmode = "true";
+            }
+        });
+    }
+</script>
