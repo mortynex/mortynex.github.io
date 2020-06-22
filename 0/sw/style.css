@@ -18,8 +18,12 @@ body {
 	left: 50%;
 	transform: translate(-50%, -65%);
 }
+.inverted{
+	filter: invert(100%);
+	background-color: black;
+}
 h1 {
-    font-family: monospace,sans-serif;
+    font-family: Consolas,monospace;
 	font-size: 150px;
 	display: inline-block;
 	padding: 0px 20px;
@@ -27,7 +31,7 @@ h1 {
 }
 button {
 	font-size: 24px;
-	font-family: monospace;
+	font-family: Consolas,monospace;
 	padding: 10px 25px;
 	margin: 0px 20px;
 	border: 1px solid black;

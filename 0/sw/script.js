@@ -5,6 +5,13 @@ let ms = 0;
 let running = false;
 let timer;
 console.log('connected');
+
+window.onload = function(){
+	if(localStorage.blackmode == "true"){
+		document.body.classList.add("inverted");
+	}
+}
+
 function update() {
 	ms++;
 

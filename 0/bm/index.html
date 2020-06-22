@@ -7,6 +7,7 @@
     <link rel="icon" href="icon.png">
 </head>
 <body>
+    <div class=""></div>
     <input type="checkbox" class="checkbox"></div>
 </body>
 </html>
@@ -14,7 +15,15 @@
     html, body {
     height: 100%;
 }
-
+.prscreen{
+        position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background: white;
+    }
 html {
     display: table;
     margin: auto;
@@ -69,13 +78,17 @@ body {
 </style>
 <script>
     window.onload = function(){
+        
+    }
+    window.onload = function(){
 	if(localStorage.blackmode == null){
-	localStorage.blackmode = "false";
+	    localStorage.blackmode = "false";
 	}
         let chb = document.getElementsByClassName("checkbox")[0];
         if(localStorage.blackmode == "true"){
             document.body.classList.add("inverted");
             chb.checked = true;
+            
         }
         chb.addEventListener("click",()=>{
             document.body.classList.toggle("inverted");
