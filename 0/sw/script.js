@@ -10,6 +10,7 @@ window.onload = function(){
 	if(localStorage.blackmode == "true"){
 		document.body.classList.add("inverted");
 	}
+
 }
 
 function update() {
