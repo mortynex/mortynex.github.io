@@ -10,7 +10,14 @@ window.onload = function(){
 	if(localStorage.blackmode == "true"){
 		document.body.classList.add("inverted");
 	}
-
+	window.onfocus = function() { 
+		if(localStorage.blackmode == "true"){
+			document.body.classList.add("inverted");
+		}
+		if(localStorage.blackmode == "false"){
+			document.body.classList.remove("inverted");
+		}
+	};
 }
 
 function update() {

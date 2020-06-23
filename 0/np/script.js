@@ -2,7 +2,15 @@
 let hdvisble;
 let hd;
 window.onload = function(){
-    
+    let textbox = document.getElementById("editor");
+    window.onfocus = function() { 
+        if(localStorage.blackmode == "true"){
+            textbox.classList.add("inverted");
+        }
+        if(localStorage.blackmode == "false"){
+            textbox.classList.remove("inverted");
+        }
+    };
 }
 window.addEventListener("load",()=>{
     let textbox = document.getElementById("editor");

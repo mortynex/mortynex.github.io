@@ -4,13 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found</title>
+    <link rel="icon" href="icon.png">
 </head>
 <body>
     <span class="k">404</span>
     <SPAn class="ok">Page Not Found</SPAn>
 </body>
 </html>
+<script>
+    window.onload = function(){
+        if(localStorage.blackmode == "true"){
+            document.body.classList.add("inverted");
+        }
+
+        window.onfocus = function() { 
+            if(localStorage.blackmode == "true"){
+                document.body.classList.add("inverted");
+            }
+            if(localStorage.blackmode == "false"){
+                document.body.classList.remove("inverted");
+            }
+        };
+    }
+</script>
 <style>
+    .inverted{
+        background-color: black;
+        color: white;
+    }
     .k{
         font-size: 250px;
         font-weight: bold;

@@ -78,7 +78,17 @@ body {
 </style>
 <script>
     window.onload = function(){
-        
+        window.onfocus = function() { 
+            let chb = document.getElementsByClassName("checkbox")[0];
+            if(localStorage.blackmode == "true"){
+                document.body.classList.add("inverted");
+                chb.checked = true;
+            }
+            if(localStorage.blackmode == "false"){
+                document.body.classList.remove("inverted");
+                chb.checked = false;
+            }
+        };
     }
     window.onload = function(){
 	if(localStorage.blackmode == null){
