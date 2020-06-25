@@ -31,9 +31,7 @@ function update() {
 		min++;
 		sec = 0;
 	}
-	if (min == 60) {
-		min == 0;
-	}
+
     //00 : 00 . 00
     
 	document.getElementById('swmin').innerHTML = addZero(min);
