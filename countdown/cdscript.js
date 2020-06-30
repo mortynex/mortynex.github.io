@@ -7,15 +7,15 @@ window.onload = function() {
             title = titles.join(" ");
             document.getElementById("title").innerHTML = title;
         }
-        let date = params.get("iso"); // example "2020-06-26T17:2352" = "YearMonthDay+T+HoursMinutes"
-        if(date != null){
-            var countDownDate = new Date(date).getTime();
+        let iso = params.get("iso"); // example "2020-06-26T17:2352" = "YearMonthDay+T+HoursMinutes"
+        if(iso != null){
+            var countDownDate = new Date(iso).getTime();
             var d = new Date();
             var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
             document.getElementById("date").innerHTML = months[d.getMonth()] + " " + d.getDate() + ", "+d.getFullYear();
         }
         else{
-            console.log(date)
+            console.log(iso);
 		}        
 	}
 	catch (error) {
