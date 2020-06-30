@@ -7,7 +7,7 @@ window.onload = function() {
             title = titles.join(" ");
             document.getElementById("title").innerHTML = title;
         }
-        let date = params.get("date"); // example "2020-06-26T17:2352" = "YearMonthDay+T+HoursMinutes"
+        let date = params.get("iso"); // example "2020-06-26T17:2352" = "YearMonthDay+T+HoursMinutes"
         if(date != null){
             var countDownDate = new Date(date).getTime();
             var d = new Date();
