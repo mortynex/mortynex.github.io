@@ -15,8 +15,9 @@ window.onload = function() {
             document.getElementById("date").innerHTML = months[d.getMonth()] + " " + d.getDate() + ", "+d.getFullYear();
         }
         else{
-            window.location.href = "index";
-        }
+            console.log(date)
+		}        
+}
 
 
 		
