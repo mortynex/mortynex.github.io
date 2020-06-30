@@ -21,9 +21,13 @@
             <img src="stopwatch/icon.png" alt="Stopwatch">
             <div><p>Stop Watch</p></div>
         </a>
-        <a target="_blank" href="theswitch" class="page" id="this">
+        <a target="_blank" href="theswitch" class="page" >
             <img src="theswitch/icon.png" alt="The Switch">
             <div><p>The Switch</p></div>
+        </a>
+        <a target="_blank" href="countdown" class="page" >
+            <img src="countdown/icon.png" alt="The Switch">
+            <div><p>Countdown</p></div>
         </a>
     </div>
 </body>
@@ -32,8 +36,15 @@
     window.onload = function(){
         if(localStorage.blackmode == "true"){
             document.body.classList.add("inverted");
-            document.getElementById("this").classList.remove("inverted");
         }
+        window.onfocus = function() { 
+		if(localStorage.blackmode == "true"){
+            document.body.classList.add("inverted");
+		}
+		if(localStorage.blackmode == "false"){
+            document.body.classList.remove("inverted");
+		}
+	    };
     }
 </script>
 <style>

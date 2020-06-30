@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Countdown</title>
+    <link rel="icon" href="icon.png">
+    <script src="cdscript.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+
+<body oncontextmenu="return false">
+    <div style="display: none;">Online Stopwatch</div>
+    <div class="title" id="title">Title</div>
+    <div  class="cd">
+        <div class="time">
+            <h1 class="times" id="td">00</h1>
+            <h1 class="tds">Days</h1>
+        </div>
+        <div class="time">
+            <h1 class="times"id="th">00</h1>
+            <h1 class="tds">Hours</h1>
+        </div>
+        <div class="time">
+            <h1 class="times"id="tm">00</h1>
+            <h1 class="tds">Minutes</h1>
+        </div>
+        <div class="time">
+            <h1 class="times"id="ts">00</h1>
+            <h1 class="tds">Seconds</h1>
+        </div>
+        
+    </div>
+    <div class="date" id="date">0</div>
+</body>
+</html>
+<script>
+    
+</script>
+<style>
+    .date{
+            font-family: "Poppins";
+            font-weight: 600;
+            text-align: center;
+            position: absolute; 
+            bottom: 0px; 
+            width:100%;
+            margin-bottom: 40px;
+            font-size: 40px;
+    }
+    .title{
+        font-family: "Poppins";
+        font-size: 100px;
+        text-align: center;
+        font-weight: 600;
+        padding-top: 300px;
+    }
+    html,
+    body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+    }
+    .cd{
+	    position: fixed;
+	    display: inline-flex;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -40%);
+
+    }
+    .time{
+        display: inline-block;
+        
+        width: 300px;
+        height: 300px;
+        margin: 0px 0px;
+        text-align: center;
+    }
+    .times{
+        font-family: Consolas;
+        font-size: 150px;
+        transform: translate(0,-50%);
+    }
+    .tds{
+        font-size: 50px;
+        font-family: "Poppins";
+        transform: translate(0,-235px);
+    }
+</style>
