@@ -17,7 +17,10 @@ window.onload = function() {
         else{
             console.log(date)
 		}        
-}
+	}
+	catch (error) {
+		console.log(error);
+	}
 
 
 		
@@ -51,9 +54,7 @@ window.onload = function() {
 				document.getElementById('ts').innerHTML = '00';
 			}
 		}, 1000);
-	} catch (error) {
-		console.log(error);
-	}
+		
 };
 function addZero(number) {
 	if (number < 10) {
@@ -62,3 +63,4 @@ function addZero(number) {
 		return number;
 	}
 }
+
