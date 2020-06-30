@@ -198,7 +198,10 @@
         }
     }
     function val(elem){
-        if(elem < 10){
+        if(elem == 0 || elem == "00"){
+            return "00";
+        }
+        if(elem < 10 ){
             return "0"+elem;
         }
         else{
@@ -267,7 +270,7 @@
             daterror.style = "opacity:100%";
             return;
         }
-        window.location.href = "countdown?title="+val(etitle.value)+"&iso="+val(eyear.value)+val(emonth.value)+val(eday.value)+"T"+val(ehour.value)+val(eminute.value)+val(esecond.value);
+        window.location.href = "countdown?title="+val(etitle.value)+"&iso="+val(eyear.value)+"-"+val(emonth.value)+"-"+val(eday.value)+"T"+val(ehour.value)+":"+val(eminute.value)+":"+val(esecond.value);
         /*if(eyear.value > 2200){
             return daterror.style = "opacity:100%";
         }
