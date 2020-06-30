@@ -15,7 +15,7 @@ window.onload = function() {
             document.getElementById("date").innerHTML = months[d.getMonth()] + " " + d.getDate() + ", "+d.getFullYear();
         }
         else{
-            console.log(iso);
+            console.log("iso="+iso);
 		}        
 	}
 	catch (error) {
