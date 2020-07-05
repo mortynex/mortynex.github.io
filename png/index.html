@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRANSPARENT PNG</title>
+</head>
+<body>
+    <h1>TRANSPARENT PNG</h1>
+    <div><p>Width:</p><input id="w" onchange="ichange()" type="text"><p>px</p></div>
+    <div><p>Height:</p><input id="h" onchange="ichange()" type="text"><p>px</p></div>
+    <a download="transparent.png" id="btn" href="">Download</a>
+</body>
+</html>
+<style>
+    h1{
+        font-size: 50px;
+    }
+    body{
+        font-family: Consolas;
+        display : flex;
+    flex-direction : column;
+    flex-wrap : nowrap;
+    justify-content : center;
+    align-items : center;
+    align-content : center;
+    }
+    div{
+        display: flex;
+        align-items: center;
+
+    }
+    a{
+        margin-top: 15px;
+        text-decoration: none;
+        border-radius: 25px;
+        padding: 12px 20px;
+        color: white;   
+        background-color: cornflowerblue;
+    }
+    p{
+        padding: 0px 8px;
+    }
+    
+</style>
+<script src="main.js"></script>
+<script src="pnglib.js"></script>
