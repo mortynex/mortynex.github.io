@@ -36,7 +36,7 @@ a.navbar{
     font-family: Poppins;
     font-style: normal;
     font-weight: bold;
-    font-size: max(15px,2.5vw);
+    font-size: max(25px,2.5vw);
     text-decoration: none;
     text-shadow: 0px 0.4166666vw 0.4166666vw rgba(0, 0, 0, 0.6);
     transition: text-shadow 0.5s;
@@ -65,12 +65,12 @@ nav{
     margin: 2.08vw;
     position: relative;
     left: -2vw;
-    margin:max(18px, 2.08vw);
+    margin:max(20px, 2.08vw);
     z-index: 69;
 }
 .github{
-    margin: max(18px, 2.08vw);;
-    height: max(32px, 4.6875vw);
+    margin: max(20px, 2.08vw);;
+    height: max(50px, 4.6875vw);
     cursor: pointer;
     
 }
