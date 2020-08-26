@@ -1,0 +1,183 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+html {
+  /* So you will be able to use 1rem as 10px in whole document for any element*/
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+footer{
+    width: 100vw;
+    height: 8vw;
+    position: absolute;
+    display : flex;
+    flex-direction : row;
+    justify-content: space-between;
+}
+a.navbar{
+    color: white;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: max(15px,2.5vw);
+    text-decoration: none;
+    text-shadow: 0px 0.4166666vw 0.4166666vw rgba(0, 0, 0, 0.6);
+    transition: text-shadow 0.5s;
+    cursor: pointer;
+}
+a:hover{
+    text-shadow: 0px 0.3vw 0.3vw rgba(255, 255, 255, 0.6);
+}
+
+a{
+    z-index: 69;
+    cursor: default;
+}
+::-webkit-scrollbar{
+    width: 1.25vw;
+}
+::-webkit-scrollbar-track{
+    background-color: #121212;
+}
+::-webkit-scrollbar-thumb{
+    background: #2B2B2B;
+    border-radius: 5px;
+    
+}
+nav{
+    margin: 2.08vw;
+    position: relative;
+    left: -2vw;
+    margin:max(18px, 2.08vw);
+    z-index: 69;
+}
+.github{
+    margin: max(18px, 2.08vw);;
+    height: max(32px, 4.6875vw);
+    cursor: pointer;
+    
+}
+section{
+    height: 100vh;
+    width: 100vw;
+    background: #1a1a1a;
+    position: relative;
+}
+section:nth-child(odd){
+    background: #212121;
+}
+.main{
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+}
+.titleSec{
+    font-weight: 600;
+    font-size: 5.20vw;
+    line-height: 7.8125vw;
+    top: -4vw;
+    left: 31.8vw;
+    
+}
+.projects{
+    z-index: 69;
+}
+.titleMain{
+    font-weight: bold;
+    font-size: 10.41vw;
+    line-height: 15.625vw;
+}
+.cont{
+    position: relative;
+    left: -10vw;
+    z-index: 69;
+}
+
+.title{
+    font-family: Poppins;
+    font-style: normal;
+    color: #ffffff;
+    text-shadow: 0px 0.625vw 0.20833333333333334vw rgba(255, 255, 255, 0.25);
+    position: relative;
+}
+.cloud{
+    background: #2B2B2B;
+    border-radius: 50px;
+    position: absolute;
+    z-index: 1;
+}
+.cloud:nth-child(1){
+    width: 36.145833333333336vw;
+    height: 11.296296296296296%;
+    left: 6.041666666666667vw;
+    top: 10%;
+}
+.cloud:nth-child(2){
+    width: 7.395833333333333vw;
+    height: 4.814814814814815%;
+    left: 65.9375vw;
+    top: 11.666666666666666%;
+}
+.cloud:nth-child(3){
+    width: 25.208333333333332vw;
+    height: 15.37037037037037%;
+    left: 80.83333333333333vw;
+    top: 22.59259259259259%;
+    
+}
+.cloud:nth-child(4){
+    width: 18.333333333333332vw;
+    height: 9.814814814814815%;
+    left: 49.270833333333336vw;
+    top: 45.18518518518518%;
+}
+.cloud:nth-child(5){
+    width: 11.979166666666668vw;
+    height: 4.444444444444445%;
+    left: 11.145833333333334vw;
+    top: 39.44444444444444%;
+}
+.cloud:nth-child(6){
+    width: 21.25vw;
+    height: 5.555555555555555%;
+    left: 69.375vw;
+    top: 70.74074074074073%;
+}
+.cloud:nth-child(7){
+    width: 7.395833333333333vw;
+    height: 4.814814814814815%;
+    left: 41.875vw;
+    top: 71.48148148148148%;
+}
+.cloud:nth-child(8){
+    width: 22.8125vw;
+    height: 11.296296296296296%;
+    left: -2.2916666666666665vw;
+    top: 62.22222222222222%;
+}
+.cloud:nth-child(9){
+    width: 15.208333333333332vw;
+    height: 6.666666666666667%;
+    left: 24.791666666666668vw;
+    top: 88.88888888888889%;
+}
+.cloud:nth-child(10){
+    width: 12.291666666666666vw;
+    height: 7.4074074074074066%;
+    left: 62.39583333333333vw;
+    top: 94.62962962962963%;
+}
