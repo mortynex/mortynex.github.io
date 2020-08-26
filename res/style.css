@@ -23,7 +23,7 @@ body {
 main{
     overflow-x: hidden;
 }
-footer{
+header{
     width: 99vw;
     height: 8vw;
     position: absolute;
@@ -122,17 +122,19 @@ section:nth-child(odd){
 .projects{
     display : flex;
     flex-direction : column;
-    justify-content : space-between;
+    justify-content : space-evenly;
     align-items : center;
     min-height: 100vh;
     width: 100vw;
+    align-content : center;
 }
 .projects .div{
-    width: 85vw;
+    
     margin-bottom: 2.2222222222222223vh;
 }
 .titleProjects{
-    height: 15vh;
+    height: max(80px,8.333333333333332vw);
+    width: 85vw;
     display: flex;
     align-items: flex-end;
     margin-left: 1.5625vw;
@@ -141,34 +143,41 @@ section:nth-child(odd){
     font-family: Poppins;
     font-style: normal;
     font-weight: bold;
-    font-size: 48px;
+    font-size: max(45px,4.6875vw);
     color: white;
 }
 .projectContainer{
-    width: 85vw;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapper{
     display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(auto-fit, minmax(245px,1fr));
+    gap: 5.555555555555555vh;
+    grid-template-columns: repeat(auto-fit, 19vw);
+    max-width: 85vw;
     justify-items: center;
 }
 .projectBox{
     background-color: #2B2B2B;
-    width: 245px;
-    height: 245px;
-    border-radius: 15px;
+    width: 19vw;
+    height: 19vw;
+    border-radius: 2.7777777777777777vh;
 }
+
 .footer{
     height: 5vh;
+    width: 85vw;
     margin-top: 2vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    justify-self : flex-end;
 }
 .footer p{
     font-family: Poppins;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 1vw;
     color: white;
 }
 .cloud{
@@ -238,9 +247,29 @@ section:nth-child(odd){
     left: 62.39583333333333vw;
     top: 94.62962962962963%;
 }
-@media screen and (max-width: 1069px) {
+@media screen and (max-width: 1200px) {
     .titleProjects{
         justify-content: center;
     }
-  
+    .wrapper{
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(245px,1fr));
+
+    }
+    
+    .projectBox{
+        width: 245px;
+        height: 245px;
+        border-radius: 15px;
+    }
+    .footer p{
+        font-size: 18px;
+    }
+    
+}
+@media screen and (max-width: 800px) {
+    .footer p{
+        font-size: 20px;
+    }
+    
 }
