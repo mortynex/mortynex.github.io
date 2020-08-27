@@ -1,4 +1,3 @@
-
 *,
 *::before,
 *::after {
@@ -7,19 +6,30 @@
   padding: 0;
   border: none;
 }
-
-html {
-  /* So you will be able to use 1rem as 10px in whole document for any element*/
-  font-size: 62.5%;
+html { 
   box-sizing: border-box;
 }
-
 body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
 }
-
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: #121212;
+}
+::-webkit-scrollbar-thumb{
+    background: #2B2B2B;
+    border-radius: 5px;
+    
+}
+:root{
+    --mainColor: #212121;
+    --secondColor: #1a1a1a;
+    --projectBoxSize: 15vw;
+}
 main{
     overflow-x: hidden;
 }
@@ -31,7 +41,26 @@ footer{
     flex-direction : row;
     justify-content: space-between;
 }
-a.navbar{
+section{
+    width: 100vw;
+    background: #1a1a1a;
+    position: relative;
+}
+section:nth-child(odd){
+    background: #212121;
+}
+nav{
+    margin: 2.08vw;
+    position: relative;
+    left: -2vw;
+    margin:max(20px, 2.08vw);
+    z-index: 69;
+}
+a{
+    z-index: 69;
+    cursor: default;
+}
+a.navlink{
     color: white;
     font-family: Poppins;
     font-style: normal;
@@ -42,53 +71,38 @@ a.navbar{
     transition: text-shadow 0.5s;
     cursor: pointer;
 }
-a:hover{
+a.navlink:hover{
     text-shadow: 0px 0.3vw 0.3vw rgba(255, 255, 255, 0.6);
-}
-
-a{
-    z-index: 69;
-    cursor: default;
-}
-::-webkit-scrollbar{
-    width: 1vw;
-}
-::-webkit-scrollbar-track{
-    background-color: #121212;
-}
-::-webkit-scrollbar-thumb{
-    background: #2B2B2B;
-    border-radius: 5px;
-    
-}
-nav{
-    margin: 2.08vw;
-    position: relative;
-    left: -2vw;
-    margin:max(20px, 2.08vw);
-    z-index: 69;
 }
 .github{
     margin: max(20px, 2.08vw);;
     height: max(50px, 4.6875vw);
     cursor: pointer;
-    
 }
-section{
-    
-    width: 100vw;
-    background: #1a1a1a;
-    position: relative;
-}
-section:nth-child(odd){
-    background: #212121;
-}
-.main{
+.mainSection{
     height: 100vh;
     display : flex;
     flex-direction : column;
     justify-content : center;
     align-items : center;
+}
+.mainWrapper{
+    position: relative;
+    left: -10vw;
+    z-index: 69;
+}
+.title{
+    cursor: default;
+    font-family: Poppins;
+    font-style: normal;
+    color: #ffffff;
+    text-shadow: 0px 0.625vw 0.20833333333333334vw rgba(255, 255, 255, 0.25);
+    position: relative;
+}
+.titleMain{
+    font-weight: bold;
+    font-size: 10.41vw;
+    line-height: 15.625vw;
 }
 .titleSec{
     font-weight: 600;
@@ -96,41 +110,19 @@ section:nth-child(odd){
     line-height: 7.8125vw;
     top: -4vw;
     left: 31.8vw;
-    
 }
-.projects{
-    z-index: 69;
-}
-.titleMain{
-    font-weight: bold;
-    font-size: 10.41vw;
-    line-height: 15.625vw;
-}
-.cont{
-    position: relative;
-    left: -10vw;
-    z-index: 69;
-}
-
-.title{
-    font-family: Poppins;
-    font-style: normal;
-    color: #ffffff;
-    text-shadow: 0px 0.625vw 0.20833333333333334vw rgba(255, 255, 255, 0.25);
-    position: relative;
-}
-.projects{
+.projectsSection{
     display : flex;
     flex-direction : column;
     justify-content : space-evenly;
     align-items : center;
+    align-content : center;
     min-height: 100vh;
     width: 100vw;
-    align-content : center;
+    z-index: 69;
 }
-.projects .div{
-    
-    margin-bottom: 2.2222222222222223vh;
+.projectsSection .item{   
+    margin-bottom: 30px;
 }
 .titleProjects{
     height: max(80px,8.333333333333332vw);
@@ -140,6 +132,7 @@ section:nth-child(odd){
     margin-left: 1.5625vw;
 }
 .titleProjects h1{
+    cursor: default;
     font-family: Poppins;
     font-style: normal;
     font-weight: bold;
@@ -148,37 +141,83 @@ section:nth-child(odd){
 }
 .projectContainer{
     display: flex;
-  flex-direction: column;
-  align-items: center;
+    flex-direction: column;
+    align-items: center;
 }
 .wrapper{
     display: grid;
-    gap: 5.555555555555555vh;
-    grid-template-columns: repeat(auto-fit, 19vw);
+    gap: 2vw;
+    grid-template-columns: repeat(auto-fit, var(--projectBoxSize));
     max-width: 85vw;
     justify-items: center;
 }
 .projectBox{
     background-color: #2B2B2B;
-    width: 19vw;
-    height: 19vw;
+    width: var(--projectBoxSize);
+    height: var(--projectBoxSize);
     border-radius: 2.7777777777777777vh;
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
 }
+.projectBox .image{
+    min-width: 10vw;
+    max-width: 14vw;
+    height:  10vw;
+    object-fit: cover;
+    background-size: cover;
+    background-image: url('https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/four-bowls-of-beans-1296x728.jpg?w=1155&h=1528');
+}
+.projectBox .title{
+    margin-top: 1vw;
+    font-size: 1.4vw;
+}
+.projectBox#seeMore{
+    display : flex;
+    flex-direction : row;
+    justify-content : center;
+    align-items : center;
 
-.footer{
+}
+.projectBox#seeMore p{
+    font-family: Poppins;
+    color: white;
+    font-size: 2vw;
+}
+.copyright{
     height: 5vh;
     width: 85vw;
     margin-top: 2vh;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-self : flex-end;
 }
-.footer p{
+.copyright p{
     font-family: Poppins;
     font-weight: 500;
     font-size: 1vw;
     color: white;
+}
+@media screen and (max-width: 1200px) {
+    .titleProjects{
+        justify-content: center;
+    }
+    .wrapper{
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, 245px);
+    }
+    
+    .projectBox{
+        width: 245px;
+        height: 245px;
+        border-radius: 15px;
+    }
+    .footer p{
+        font-size: 18px;
+    }
 }
 .cloud{
     background: #2B2B2B;
@@ -246,23 +285,4 @@ section:nth-child(odd){
     height: 4.166666666666666vw;
     left: 62.39583333333333vw;
     top: 94.62962962962963%;
-}
-@media screen and (max-width: 1200px) {
-    .titleProjects{
-        justify-content: center;
-    }
-    .wrapper{
-        gap: 30px;
-        grid-template-columns: repeat(auto-fit, minmax(245px,1fr));
-    }
-    
-    .projectBox{
-        width: 245px;
-        height: 245px;
-        border-radius: 15px;
-    }
-    .footer p{
-        font-size: 18px;
-    }
-    
 }
