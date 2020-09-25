@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    padding: 3vw;
+}
+
+main{
+    min-height: 5vh;
+    height: 75vh;
+}
+
+footer{
+    height: 4vh;
+    min-height: 5em;
+}
+
+header{
+    min-height: 5em;
+    padding-bottom: 2vh;
+    height: 8vh;
+}
+
+.noteTitle{
+    outline: none;
+    border: none;
+    font-size: 3em;
+    font-family: Roboto;
+    font-weight: 600;
+    border-bottom: 2px solid black;
+    padding-bottom: 0.2em;
+    max-width: 90vw;
+}
+.noteContent{
+    resize: none;
+    outline: none;
+    border: none;
+    font-family: Roboto;
+    font-size: 1em;
+    
+    width: 100%;
+    height: 100%;
+}
+.controlArea{
+    display: flex;
+}
+.btn{
+    height: 5em;
+    width: 14em;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin: 1em;
+}
+.btn span{
+    font-family: Poppins;
+    font-weight: 600;
+    color: white;
+    font-size: 1.6em;
+}
+.saveBtn{
+    background: #2D9CDB;
+}
+.saveBtn:hover{
+    background: #2587BE;
+    transition: background 0.3s;
+}
+.cancelBtn{
+    background: #FF0015;
+    
+}
+.cancelBtn:hover{
+    background: #D60012;
+    transition: background 0.3s;
+}
+[readonly]{
+	cursor: default;
+}

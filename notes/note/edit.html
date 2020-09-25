@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type=module src="js/edit.js"> </script>
+    <link rel="stylesheet" href="css/edit.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <input id="dis" maxlength="18" value="New Note" type="text" class="noteTitle" readonly>
+        
+    </header>
+    <main>
+        
+        <textarea id="dis" class="noteContent" spellcheck="false" class="language-js" readonly>
+        </textarea>
+    </main>
+    <footer>
+        <div class="controlArea">
+            <div class="editMode">
+                <button id="saveBtn" class="saveBtn btn">
+                    <span>Save</span>
+                </button>
+                <button id="cancelBtn" class="cancelBtn btn">
+                    <span>Cancel</span>
+                </button>
+            </div>
+            <div class="lookMode">
+                <button id="okBtn" class="saveBtn btn">
+                    <span>Go Back</span>
+                </button>
+                <button id="editBtn" class="saveBtn btn">
+                    <span>Edit</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
