@@ -2,7 +2,7 @@ import {getNote,deleteNote, addNote} from "./DB.js";
 import {html, render} from 'https://unpkg.com/lit-html?module';
 
 document.querySelector("#newBtn").addEventListener("click",()=>{
-    window.location.href = `${window.location.origin}/note/edit.html?edit=true`;
+    window.location.href = `${window.location.origin}/notes/note/edit?edit=true`;
 });
 
 function multi(query,callback){
@@ -47,11 +47,11 @@ async function init(){
 
     document.querySelectorAll("#titleClick").forEach(title=>{
         title.addEventListener("click",()=>{
-            window.location.href = `${window.location.origin}/note/edit.html?id=${title.parentNode.dataset.id}`;
+            window.location.href = `${window.location.origin}/notes/note/edit?id=${title.parentNode.dataset.id}`;
         })
     })
     multi("#edit",(e)=>{
-        window.location.href = `${window.location.origin}/note/edit.html?edit=true&id=${e.target.parentNode.parentNode.dataset.id}`;
+        window.location.href = `${window.location.origin}/notes/note/edit?edit=true&id=${e.target.parentNode.parentNode.dataset.id}`;
     })
     multi("#del",async (e)=>{
         let id = +e.target.parentNode.parentNode.dataset.id;

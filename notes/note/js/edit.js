@@ -28,12 +28,12 @@ const noteTitle = document.querySelector(".noteTitle");
         console.log("no id", noteId, params.get("id"))
     }
 })()
-const goHome = () =>  window.location.href = window.location.origin + "/index.html";
+const goHome = () =>  window.location.href = window.location.origin + "/notes/";
 document.querySelector("#okBtn").addEventListener("click",()=>{
     goHome();
 })
 document.querySelector("#editBtn").addEventListener("click",()=>{
-    window.location.href = `${window.location.origin}/note/edit.html?edit=true&id=${noteId}`;
+    window.location.href = `${window.location.origin}/notes/note/edit?edit=true&id=${noteId}`;
 })
 document.querySelector("#saveBtn").addEventListener("click",async e=>{
     const title = noteTitle.value;
