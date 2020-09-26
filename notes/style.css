@@ -79,7 +79,7 @@ main{
 }
 .noteContainer{
 	max-width: 95vw;
-	min-width: 90vw;
+	min-width: 94vw;
 	display: grid;
 	/*flex-direction: row;
 	align-content: flex-start;
@@ -129,4 +129,16 @@ main{
 	font-size: 1.3em;
 	text-overflow: ellipsis;
 	overflow: hidden; 
+}
+@media only screen and (max-width:600px){
+	.search{
+		display:none;
+	}
+}
+@media only screen and (max-width: 680px){
+	.noteContainer{
+		grid-template-columns: 325px;
+		max-width: 325px;
+		min-width: 325px;
+	}
 }

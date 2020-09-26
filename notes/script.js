@@ -38,7 +38,7 @@ async function init(){
         obj.content = obj.content.substring(0,500);
         return obj
     })
-    notes.sort((a,b)=>b?.liked - a?.liked);
+    //notes.sort((a,b)=>b?.liked - a?.liked);
     reRender(notes);
 }
 
@@ -56,9 +56,11 @@ async function init(){
     multi("#del",async (e)=>{
         let id = +e.target.parentNode.parentNode.dataset.id;
         if(!id) return;
+        const conf = window.confirm(`Do you really want to delete note "${notes.find(n=>n.id===id)?.title}"?`)
+        if(!conf) return
         let res = await deleteNote(id);
         if(res){
-            window.location.reload();
+            await init();
         }
         else{
             console.log(res)
@@ -74,8 +76,9 @@ async function init(){
     })
 })()
 document.querySelector("#searchBox").addEventListener("input",(e)=>{
-    const value = e.target.value.toLowerCase();
+    const value = e.target.value.toLowerCase().replace(/[^\w\s]/g,"");
+    console.log({value})
     if(value.length < 3) return reRender(notes);
-    const filtred = notes.filter(n=>n.title.toLowerCase().includes(value));
+    const filtred = notes.filter(n=>n.title.toLowerCase().replace(/[^\w\s]/g,"").includes(value));
     reRender(filtred)
 })

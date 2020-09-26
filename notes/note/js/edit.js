@@ -21,11 +21,13 @@ const noteTitle = document.querySelector(".noteTitle");
     if(noteId && noteId !== 0){
         let note = await getNote(noteId);
         if(!note){alert("Couldnt load your note :/")};
-        noteContent.value = note.content;
-        noteTitle.value = note.title;
+        const {content, title} = note;
+        noteContent.value = content;
+        noteTitle.value = title;
+        document.title = title;
     }
     else{
-        console.log("no id", noteId, params.get("id"))
+        document.title = "New Note";
     }
 })()
 const goHome = () =>  window.location.href = window.location.origin + "/notes/";
@@ -33,14 +35,17 @@ document.querySelector("#okBtn").addEventListener("click",()=>{
     goHome();
 })
 document.querySelector("#editBtn").addEventListener("click",()=>{
-    window.location.href = `${window.location.origin}/notes/note/edit?edit=true&id=${noteId}`;
+    window.location.href = `${window.location.origin}/notes/note/edit.html?edit=true&id=${noteId}`;
 })
 document.querySelector("#saveBtn").addEventListener("click",async e=>{
     const title = noteTitle.value;
     const cont = noteContent.value;
-    if(!title || !cont) {alert("Couldnt save your note, something is empty!");return;}
+    if(!title || !cont) {
+        alert(`Couldnt save your note, your note's ${!title ? "title" : "content"} is empty!`);
+        return;
+    }
     let id = undefined;
-    if(typeof noteId == "number" && !isNaN(noteId)) id = noteId;
+    if(typeof noteId === "number" && !isNaN(noteId)) id = noteId;
     const note = await addNote(title,cont,"white",false,id);
     goHome();
 });
