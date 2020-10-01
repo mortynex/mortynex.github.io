@@ -1,8 +1,9 @@
-import {getNote,addNote} from "../../DB.js";
+import {getNote,addNote} from "./DB.js";
 
 const params = new URLSearchParams(window.location.search);
-const noteId = +params.get("id");
-const editMode = params.get("edit") === "true" ? true : false;
+const rawId = params.get("id");
+const noteId = (rawId !== null) ? +rawId : null;
+const editMode = (params.get("edit") ?? params.get("new") ) !== null ? true : false;
 
 if(editMode){
     document.querySelectorAll("#dis").forEach(node=>{
@@ -35,7 +36,7 @@ document.querySelector("#okBtn").addEventListener("click",()=>{
     goHome();
 })
 document.querySelector("#editBtn").addEventListener("click",()=>{
-    window.location.href = `${window.location.origin}/notes/note/edit.html?edit=true&id=${noteId}`;
+    window.location.href = `${window.location.origin}/notes/note?id=${noteId}&edit`;
 })
 document.querySelector("#saveBtn").addEventListener("click",async e=>{
     const title = noteTitle.value;
@@ -44,9 +45,12 @@ document.querySelector("#saveBtn").addEventListener("click",async e=>{
         alert(`Couldnt save your note, your note's ${!title ? "title" : "content"} is empty!`);
         return;
     }
-    let id = undefined;
-    if(typeof noteId === "number" && !isNaN(noteId)) id = noteId;
+    const id = (noteId !== null) ? noteId : undefined;
     const note = await addNote(title,cont,"white",false,id);
+    if(note !== true){
+        alert("Something went wrong, couldnt save your note");
+        return;
+    }
     goHome();
 });
 document.querySelector("#cancelBtn").addEventListener("click",e=>{

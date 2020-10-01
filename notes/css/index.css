@@ -33,7 +33,7 @@ body {
 }
 
 header{
-	height: 15vh;
+	height: 10em;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -41,14 +41,15 @@ header{
 	min-height: 12em;
 }
 header h1{
-	font-size: 5em;
+	font-size: 4.5em;
 }
 header input.search{
 	background: #909090;
-	border-radius: 25px;
+	border-radius: 2.5em;
 	height: 3em;
-	width: 19em;
+	width: 20em;
 	color: white;
+	font-size: 1.4em;
 	font-family: Roboto;
 	padding: 0 1em 0 1em;
 }
@@ -84,16 +85,17 @@ main{
 	/*flex-direction: row;
 	align-content: flex-start;
 	flex-wrap: wrap;*/
-	grid-template-columns: repeat(auto-fit,325px);
+	grid-template-columns: repeat(auto-fill,32.5em);
 	align-content: flex-start;
+	justify-content: center;
 }
 .note{
-	margin: 25px;
-	width: 275px;
-	height: 275px;
-	padding: 20px;
-	border: 1px solid rgba(133, 133, 133, 0.5);
-	border-radius: 25px;
+	margin: 2.5em;
+	width: 27.5em;
+	height: 27.5em;
+	padding: 2em;
+	border: 0.1em solid rgba(133, 133, 133, 0.5);
+	border-radius: 2.5em;
 	display: flex;
 	flex-direction: column;
 }
@@ -108,32 +110,54 @@ main{
 	font-size: 1.7em;
 	text-overflow: ellipsis;
 	overflow: hidden;
-	
+	white-space: nowrap;
 	cursor: pointer;
 }
 .fas.fa-heart{
-	color: darkred;
+	color: #cf1b1b;
 }
 .noteTitle:hover{
 	color: #4f4e4c;
 }
+.note:hover .iconContainer{
+	display: flex;
+}
 .noteTop .iconContainer{
+	float: right;
 	font-size: 1.7em;
 	width: auto;
+	display: none;
+	width: 4em;
+	justify-content: flex-end;
 }
 .noteTop .iconContainer .fas, .noteTop .iconContainer .far{
-	padding-left: 0.2em;
+	padding-left: 0.3em;
 	cursor: pointer;
+}
+.iconContainer i:hover{
+	color: #4f4e4c;
+}
+.iconContainer .fa-heart:hover{
+	color: #900d0d;
 }
 .noteDesc{ 
 	font-size: 1.3em;
 	text-overflow: ellipsis;
 	overflow: hidden; 
 }
+.hl{
+	background-color: yellow;
+}
+@media (hover: none) and (pointer: coarse){
+	.noteTop .iconContainer{
+		display: flex;
+	}
+}
 @media only screen and (max-width:600px){
 	.search{
 		display:none;
 	}
+	
 }
 @media only screen and (max-width: 680px){
 	.noteContainer{
@@ -141,4 +165,5 @@ main{
 		max-width: 325px;
 		min-width: 325px;
 	}
+
 }

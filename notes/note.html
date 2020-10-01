@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type=module src="js/edit.js"> </script>
-    <link rel="stylesheet" href="css/edit.css">
+    <script type=module src="js/note.js"> </script>
+    <link rel="stylesheet" href="css/note.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Note</title>
-    <link rel="icon" type="image/png" href="../icon.png"/>
+    <link rel="icon" type="image/png" href="res/icon.png"/>
 </head>
 <body>
     <header>
-        <input id="dis" maxlength="18" placeholder="New Note" type="text" class="noteTitle" readonly>
+        <input id="dis" maxlength="23" placeholder="New Note" type="text" class="noteTitle" readonly>
         
     </header>
     <main>
-        
-        <textarea id="dis" class="noteContent" spellcheck="false" class="language-js" readonly></textarea>
+        <textarea id="dis" class="noteContent" spellcheck="false"readonly></textarea>
     </main>
     <footer>
         <div class="controlArea">
-            <div class="editMode">
+            <div class="editMode" style="display: none;">
                 <button id="saveBtn" class="saveBtn btn">
                     <span>Save</span>
                 </button>
@@ -27,7 +26,7 @@
                     <span>Cancel</span>
                 </button>
             </div>
-            <div class="lookMode">
+            <div class="lookMode" style="display: none;">
                 <button id="okBtn" class="saveBtn btn">
                     <span>Go Back</span>
                 </button>

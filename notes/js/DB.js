@@ -10,10 +10,6 @@ let db;
     })
 })();
 
-
-
-
-
 export async function getNote (id){
     let d = await db;
     let transaction = await d.transaction('notes');
@@ -30,7 +26,7 @@ export async function addNote (title,content,color,liked,id){
     let obj = id ? {title,content,color,liked,id} : {title,content,color,liked};
     try{
         let d = await notes.put(obj);
-        return d;
+        return true;
     }catch(err){
         return err;
     }
